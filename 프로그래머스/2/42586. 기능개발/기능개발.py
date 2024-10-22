@@ -28,6 +28,7 @@ from collections import deque
     
 #     return answer
 
+# deque 로 풀었을 때
 def solution(progresses, speeds):
     answer = []
     deq = deque()
@@ -46,4 +47,7 @@ def solution(progresses, speeds):
         answer.append(count)
     return answer
 
-# 시간복잡도 O(n)
+# 둘 다 시간복잡도 O(n), 공간 복잡도 O(n)
+# deque를 사용하는 방식은 내부적으로 더 많은 메모리를 사용하게 된다.
+# deque의 특성 상 리스트보다 추가적인 메모리를 차지할 수 있음(-chatGPT)
+# 공간 복잡도 측면에서 인덱스를 사용하는 방식이 좀 더 효율적
