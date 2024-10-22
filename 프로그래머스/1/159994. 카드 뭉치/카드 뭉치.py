@@ -18,23 +18,16 @@
 from collections import deque
 def solution(cards1, cards2, goal):
     answer = "Yes"
-    deq1 = deque(cards1) # cards1을 deque로 변환하기 위한 변수
-    deq2 = deque(cards2) # cards2를 deque로 변환하기 위한 변수
-
-    # for i in cards1: # cards1의 원소를 deq1로 append
-    #     deq1.append(i)
-
-    # for i in cards2: # cards2의 원소를 deq2로 append
-    #     deq2.append(i)
+    deq1 = deque(cards1) # cards1을 deque로 변환
+    deq2 = deque(cards2) # cards2를 deque로 변환
     
     for card in goal:
-        if deq1 and card == deq1[0]:
-            deq1.popleft()
-        elif deq2 and card == deq2[0]:
-            deq2.popleft()
-        else:
+        if deq1 and card == deq1[0]: # deq1이 비어있지 않고, 첫 번째 원소가 card와 같다면
+            deq1.popleft() # deq1 맨 왼쪽 pop
+        elif deq2 and card == deq2[0]: # deq1에 있지 않으며, deq2가 비어있지 않고, 첫 번째 원소가 card와 같다면
+            deq2.popleft() # deq2 맨 왼쪽 pop
+        else: # deq1 또는 deq2가 비어있거나, 맨 왼쪽에 원소가 없을 때
+              # answer = "No", break를 통해 반복문 종료 
             answer = "No"
             break
     return answer
-
-print(solution(["i", "drink", "water"],["want", "to"],["i", "want", "to", "drink", "water"]))
