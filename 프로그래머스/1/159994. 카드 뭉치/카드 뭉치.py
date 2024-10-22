@@ -31,3 +31,10 @@ def solution(cards1, cards2, goal):
             answer = "No"
             break
     return answer
+
+# 시간 복잡도
+# 둘 다 O(n)으로 동일
+# 공간 복잡도
+# 인덱스 사용 시 O(1), deque 사용 시 O(m1+m2)
+# 결론
+# 인덱스를 사용하는 것이 공간 효율성 측면에서 더 나은 코드
