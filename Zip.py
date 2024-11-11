@@ -1,6 +1,6 @@
 def solution(msg):
     alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
+    dict = {}
     
     # {'A':1,'B':2...'Z':26}
     for i in range(len(alphabet)):
